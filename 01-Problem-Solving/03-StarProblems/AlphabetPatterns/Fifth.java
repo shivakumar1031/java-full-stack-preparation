@@ -20,5 +20,6 @@ public class Fifth {
             }
             System.out.println();
         }
+        sc.close();
     }
 }
