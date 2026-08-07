@@ -25,7 +25,7 @@ public class FirstNonRepeatingCharacter{
             char ch=str.charAt(i);
             if(ch>='a'&& ch<='z' && count[str.charAt(i)-'a']==1){
                 System.out.println(str.charAt(i));
-            break;
+                break;
             }
         }
     }

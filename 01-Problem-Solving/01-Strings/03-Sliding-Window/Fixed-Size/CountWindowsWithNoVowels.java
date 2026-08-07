@@ -60,7 +60,7 @@ public class CountWindowsWithNoVowels {
             right++;
             if(count==0){
                 System.out.println(str.substring(left, right)+"--> "+count);
-                break;
+                return;
             }
         }
         System.out.println("The substring contains atleast one vowel ");
