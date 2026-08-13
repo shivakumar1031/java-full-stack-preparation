@@ -85,9 +85,9 @@
 		select distinct salary from Employee;
         
         
-# FUNCTIONS IN MySQL
+-- FUNCTIONS IN MySQL
 		
-		# 1. AGGREGATE FUNCTIONS
+		-- 1. AGGREGATE FUNCTIONS
         -- -> We should only have columns associated with aggregate in select list unless it is in GROUP BY select list
 			select min(age),max(age),sum(age),avg(age),count(age) from Patient;
             
