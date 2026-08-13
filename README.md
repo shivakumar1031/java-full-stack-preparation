@@ -1,4 +1,4 @@
-# Java Full Stack Interview Preparation
+# Java Full Stack Preparation
 
 This repository contains my ongoing preparation for Java Full Stack Developer roles.
 
