@@ -12,7 +12,7 @@ public class CountEvenAndOddElements {
         int arr[] = {10 ,15, 22, 31, 40, 51, 60};
         int even_count=0,odd_count=0;
         for(int i:arr){
-            if(i%2==0)
+            if((i^1)==0)
                 even_count++;
             else
                 odd_count++;

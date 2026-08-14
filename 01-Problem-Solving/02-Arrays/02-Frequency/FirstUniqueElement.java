@@ -22,14 +22,14 @@ public class FirstUniqueElement {
     public static void main(String[] args) {
         int arr[] = {10, 20, 30, 20, 10, 40, 30};
         for(int i=0;i<arr.length;i++){
-            boolean alreadyPresent=false,flag=false;
+            boolean flag=false;
             for(int j=0;j<i;j++){
                 if(arr[i]==arr[j]){
-                    alreadyPresent=true;
+                    flag=true;
                     break;
                 }
             }
-            if(alreadyPresent)
+            if(flag)
                 continue;
             for(int k=i+1;k<arr.length;k++){
                 if(arr[i]==arr[k]){
