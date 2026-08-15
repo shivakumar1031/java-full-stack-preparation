@@ -1,4 +1,5 @@
--- NORMALIZED TABLE EMPLOYEES IT IS DEPENDENT TABLE AND INDEPENDENT TABLES MANAGER,STATE AND DEPARTMENT 
+-- NORMALIZED TABLE EMPLOYEES IT IS DEPENDENT TABLE AND INDEPENDENT TABLES MANAGER,STATE AND DEPARTMENT
+ 
 CREATE TABLE Department (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR(50) UNIQUE
@@ -36,18 +37,21 @@ INSERT INTO Department (dept_id, dept_name) VALUES
 (3, 'Finance'),
 (4, 'Sales'),
 (5, 'Marketing');
+
 INSERT INTO Manager (manager_id, manager_name) VALUES
 (101, 'Ravi'),
 (102, 'Priya'),
 (103, 'Kiran'),
 (104, 'Anitha'),
 (105, 'Suresh');
+
 INSERT INTO State (state_id, state_name) VALUES
 (1, 'Karnataka'),
 (2, 'Tamil Nadu'),
 (3, 'Andhra Pradesh'),
 (4, 'Telangana'),
 (5, 'Kerala');
+
 INSERT INTO Employees
 (e_id, fname, lname, age, salary, dept_id, manager_id, state_id)
 VALUES
@@ -67,6 +71,7 @@ VALUES
 (14, 'Manoj',   'Rao',      33, 68000, 5, 105, 3),
 (15, 'Neha',    'Singh',    22, 35000, 1, 101, 2),
 (16, 'Neha',    'Singh',    25, 35000, 1, 101, 2);
+
 insert into employees values(16,'Neha', 'Singh',24,3500,1,101,2);
 update employees set age = 24 where e_id=16;
 
@@ -75,7 +80,9 @@ select * from department;
 select * from manager;
 select * from state;
 
--- 1. W.Q.T display youngest employee details from 'sales' department
+
+-- W.A.Q means Write a Query;
+-- 1. W.A.Q display youngest employee details from 'sales' department
 	select e.*, d.dept_name as dept_name from employees e 
     join department d on e.dept_id=d.dept_id 
     where age=(
@@ -103,6 +110,28 @@ select * from state;
 			join department d on e.dept_id=d.dept_id
 			group by d.dept_name,e.dept_id
             ) as dept_avg order by Avg_salary desc limit 1;
+            
+-- 6. W.A.Q to display dept with more than or equal to 5 employees
+	select d.dept_name from employees e join department d on e.dept_id = d.dept_id 
+								   group by d.dept_name,e.dept_id having count(e.e_id )>=5;
+                                   
+-- 7. W.A.Q to display 2nd highest salary getting employee details
+	select * from employees order by salary desc limit 1,1; -- it will work only if table have distinct salaries
+    select e1.* from employees e1 where 1 = (select count(*) from employees e2 where e1.salary<e2.salary); -- it will work only if table has distinct salaries
+	select e1.* from employees e1 where 1 = (select count(distinct e2.salary) from employees e2 where e1.salary<e2.salary); -- it will work if table has duplicate salaries also
+    select * from employees where salary=(select max(salary) from employees where salary< (select max(salary) from employees)); -- it will work if table has duplicate salaries also
+
+-- 8. W.A.Q to display top paid employee details from each dept
+	select e.*,d.dept_name from employees e join department d on e.dept_id=d.dept_id
+							where salary =(select max(salary) from employees e2 where e.dept_id=e2.dept_id);
+
+-- 9. W.A.Q to update all sales emplouee salary as 65000 if previous salary is less than 50000
+	update employees e join department d on e.dept_id=d.dept_id set salary=65000 where salary<50000 and d.dept_name='Sales';
+    
+-- 10. W.A.Q to delete employees details when employee name same as manager name
+	delete e from employees e join manager m on e.fname=m.manager_name;
+    
+											
                                                        
 	
 
