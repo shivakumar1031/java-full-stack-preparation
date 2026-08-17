@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/requested" method="post">
+        <fieldset>
+            <legend>Enter ur Details:</legend>
+            <label for="username">Enter ur Name: </label>
+            <input type="text" id="username">
+            <br>
+            <label for="password">Enter ur password: </label>
+            <input type="password" id="password" placeholder="1232@shid">
+            <br>
+            <label for="email">Enter ur Email: </label>
+            <input type="email" id="email">
+            <br>
+            <label for="gender">Select ur Gender: </label>
+            <input type="radio" id="gender" name="gender" value="male"> male
+            <input type="radio" id="gender" name="gender" value="female"> female
+            <br>
+            <label for="about">Enter description about ur project: </label>
+            <textarea type="about" id="about"></textarea>
+            <br>
+            <label for="phonenumber">Enter ur mobile number</label>
+            <input type="phonenumber" id="phonenumber">
+            <br>
+            <label for="seletionLang">Select the Languages Known: </label>
+            <input type="checkbox" name="Math" value="on">Math
+            <input type="checkbox" name="Science" value="on">Science
+
+            <br>
+            <label for="uploadimage"> Upload image</label>
+            <input type="file" name="uploadimage" accept="C:\Users\shiva\OneDrive\Desktop\Screenshot 2026-08-16 120726.png">
+            <br>
+
+            <label for="bottons"> Button</label>
+            <input type="button" name="submit" value="submit">
+            <br>
+
+            <p>Which language would you know?</p>
+            <select name="dropdown" id="language">
+                <option value="c language">c language</option>
+                <option value="java language">java language</option>
+
+            </select>
+
+            <input type="submit" id="submit">
+
+        </fieldset>
+        
+
+    </form>
+</body>
+</html>
