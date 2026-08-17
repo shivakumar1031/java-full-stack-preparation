@@ -1,5 +1,5 @@
 -- NORMALIZED TABLE EMPLOYEES IT IS DEPENDENT TABLE AND INDEPENDENT TABLES MANAGER,STATE AND DEPARTMENT
- 
+use palle;
 CREATE TABLE Department (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR(50) UNIQUE
@@ -130,8 +130,20 @@ select * from state;
     
 -- 10. W.A.Q to delete employees details when employee name same as manager name
 	delete e from employees e join manager m on e.fname=m.manager_name;
-    
-											
+
+-- 11. W.A.Q to delete youngest employee details from 'Sales' department
+	delete e from employees e 
+		join department d 
+			on e.dept_id=d.dept_id 
+					where age=(select min(age) from employees e2 
+								join department d on e2.dept_id=d.dept_id 
+									where d.dept_name='Sales') 
+						and d.dept_name='Sales';
+							
+-- 12. W.A.Q to display employee details who salary is greater than average salary of thier own department
+	select e.*,d.dept_name from employees e 
+			join department d on e.dept_id=d.dept_id
+				where salary > (select avg(salary) from employees e1 where e1.dept_id=e.dept_id);
                                                        
 	
 
