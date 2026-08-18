@@ -1,0 +1,31 @@
+h1{
+    color:mediumorchid;
+    background-color: rgb(180, 151, 151);
+    text-align:center;
+    text-decoration: underline;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+h2{
+    color:black;
+    background-color: pink;
+    text-align: left;
+    text-decoration: overline;
+    text-transform: lowercase;
+}
+h3{
+    color:blue;
+    background-color: yellowgreen;
+    text-align: right;
+    text-decoration: line-through;
+    text-transform: uppercase;
+}
+p{
+    color:red;
+    background-color:lightgreen;
+    text-transform: none;
+    line-height: normal;
+}
+body{
+    background-color:blanchedalmond;
+}
