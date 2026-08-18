@@ -139,6 +139,13 @@ select * from state;
 								join department d on e2.dept_id=d.dept_id 
 									where d.dept_name='Sales') 
 						and d.dept_name='Sales';
+						
+	delete from employees  where e_id =(
+												select e1.e_id from employees e1 join department d 
+                                                on d.dept_id=e1.dept_id where d.dept_name='Sales' 
+                                                order by e1.age asc limit 1);
+                        
+
 							
 -- 12. W.A.Q to display employee details who salary is greater than average salary of thier own department
 	select e.*,d.dept_name from employees e 
