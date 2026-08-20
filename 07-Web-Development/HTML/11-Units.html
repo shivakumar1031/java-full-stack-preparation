@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Units Practice</title>
+    <style>
+        body{
+            font-size: 19px;
+            background-color: green;
+            border:2px,solid,red;
+        }
+        .parent{
+            background-color: lightpink;
+            width:50%;
+            border:2px,solid,black;
+            font-size:1rem;
+
+        }
+        .percentage{
+            background-color: red;
+            width:50%;
+            font-size: 2rem;
+        }
+        .em{
+            background-color: white;
+            font-size:2rem;
+        }
+        .rem{
+            font-size: 2rem;
+            background-color: yellow;
+        }
+        .inner{
+            background-color: yellow;
+            font-size:1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+        <div class="percentage">percentage
+            <div class="inner">inner</div>
+        </div>
+        <div class="em">EM</div>
+        <div class="rem">REM</div>
+    </div>
+
+</body>
+</html>

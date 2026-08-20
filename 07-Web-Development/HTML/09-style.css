@@ -1,3 +1,23 @@
 #shiva{
     font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size:larger;
+    font-weight: bold;
+    font-style:italic;
+}
+#teja{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: medium;
+    font-weight: bolder;
+    font-style:normal;
+}
+#anil{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: small;
+    font-weight: normal;
+    font-style: oblique;
+}
+#seenu{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: smaller;
+    font-weight:lighter;
 }
