@@ -9,22 +9,34 @@
             text-align: center;
             background-color: antiquewhite;
             border:2px,solid,black;
-            height:200px;
-            width:200px;
-            position:sticky;
+            height:100px;
+            width:20%;
+            
             top:20px;
         }
         .fixed{
             
             background-color: rgb(84, 65, 40);
             border:2px,solid,black;
-            height:200px;
-            width:200px;
-            position:fixed;
+           height:100px;
+            width:20%;
+            
             top:200px;
+            box-sizing:content-box;
+        }
+        
+        .relative{
+            height:100px;
+            width:20%;
+            position:relative;
+            background-color: aquamarine;
         }
         .absolute{
-            
+            height:50%;
+            width:90%;
+            position:absolute;
+            top:20px;
+            background-color: rgb(69, 69, 55);
         }
     </style>
 </head>
@@ -59,8 +71,10 @@
         Natus, facere mollitia. Sequi quae nisi officiis delectus eum maxime, inventore minima molestiae illo expedita, aliquid ad alias magnam explicabo quisquam, eaque debitis! Quidem consequatur odit sit, vero animi dicta.
         
         <div class="static">static</div>
-        <div class="relative">relative</div>
-        <div class="absolute">absolute</div>
+        <div class="relative">
+            <div class="absolute">absolute</div>
+        </div>
+        
         <div class="fixed">fixed</div>
         <div class="sticky">sticky</div>
         <div class="z-index">z-index</div>
